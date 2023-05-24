@@ -10,6 +10,8 @@ import math
 map_field = numpy.zeros(shape=(10,10))
 
 dir = "RIGHT"
+#dir = "DOWN"
+
 x = 0
 y = 0
 def turn90():
@@ -60,18 +62,21 @@ def movement(num):
             num = num - 1
             map_field[y][x-num] = 1
         x=numOrigin-x
-    if dir == "UP":
+    if dir == "DOWN":
         map_field[y+num][x] = 2
         for count in range(num-1):
             num = num - 1
             map_field[y+num][x] = 1
         y=numOrigin+y
-    if dir == "DOWN":
+    if dir == "UP":
             map_field[y-num][x] = 2
             for count in range(num-1):
                 num = num - 1
                 map_field[y-num][x] = 1
             y=numOrigin-y
+    if x < 0 or x > 9 or y < 0 or y > 9:
+        print("Salio del mapa ")
+
 def func():
     """Documentation for a function.
     More details.
@@ -99,7 +104,8 @@ def main():
     #for inst in inst_list:
      #   do_instruction(inst)
     #map_field[9,0]=1
-    #print(map_field)
+    print(map_field)
+    print("----------------------------------------------------------------------------------")
     while x <=9 and x >= 0 and y <= 9 and y >=0:
        if inst_list[i][0] == 'mov':
            movement(int(inst_list[i][1]))
@@ -115,10 +121,10 @@ def main():
        print("Direccion actual",dir)
        print("Coordenadas actuales: (",x,",",y,")")
        print()
-       print()  
+       print("---------------------------------------------------------------------------------")  
        i = i +1 
        
-       if i >= 5:
+       if i >= 7:
         break
 
     
