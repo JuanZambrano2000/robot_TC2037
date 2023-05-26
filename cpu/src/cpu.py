@@ -1,16 +1,9 @@
-"""@package docstring
-Documentation for CPU module.
-More details.
-"""
-
 import csv
 import numpy
-import math
 
 map_field = numpy.zeros(shape=(10,10))
 
 dir = "RIGHT"
-#dir = "DOWN"
 
 x = 0
 y = 0
@@ -77,15 +70,6 @@ def movement(num):
     if x < 0 or x > 9 or y < 0 or y > 9:
         print("Salio del mapa ")
 
-def func():
-    """Documentation for a function.
-    More details.
-    """
-    pass
-def do_instruction(inst):
-    print(inst)
-    print(map_field)
-
 def read_file():
     inst_list = []
     with open('cpu\src\instructions.asm') as csv_file:
@@ -100,10 +84,6 @@ def main():
     inst_list = read_file()
     global x, y, dir, map_field
     i = 0
-    #print(inst_list)
-    #for inst in inst_list:
-     #   do_instruction(inst)
-    #map_field[9,0]=1
     print(map_field)
     print("----------------------------------------------------------------------------------")
     while x <=9 and x >= 0 and y <= 9 and y >=0:
@@ -123,11 +103,8 @@ def main():
        print()
        print("---------------------------------------------------------------------------------")  
        i = i +1 
-       
        if i >= 7:
         break
-
-    
     
 if __name__ == "__main__":
     main()
