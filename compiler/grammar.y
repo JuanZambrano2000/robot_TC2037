@@ -5,70 +5,38 @@
 #include "lex.yy.c"
 %}
 
-%token NOUN KINDWORD KINDCOMPLEMENT CN ADJ CONECTOR MOVE TURN DEGREE NUM
+%token NOUN KINDWORD KINDCOMPLEMENT CN ADJ CONECTOR MOVE TURN DEGREE NUM EOL
 
 %%
 
-instructions: instruction 
-            | instructions nexo instruction              { printf("Instruction is valid\n"); }
+INSTRUCTIONS: INSTRUCTION 
+            | INSTRUCTIONS NEXOS INSTRUCTION              { printf("Instruction is valid\n"); }
             ;
 
-instruction: noun kindsentence action cantidad 
-            | noun kindsentence action cantidad complements
+INSTRUCTION: NOUN KINDSENTENCE ACTION CANTIDAD { printf("Instruction is valid ins 1\n"); }
+            | NOUN KINDSENTENCE ACTION CANTIDAD complements
             ;
 
-kindsentence: kindword 
-            | kindword kindcomplement
+KINDSENTENCE: KINDWORD 
+            | KINDWORD KINDCOMPLEMENT
             ;
 
-complements: cn 
-            | cn adj
+complements: CN 
+            | CN ADJ
            ;
 
-nexos: conector 
-     | conector conector
+NEXOS: CONECTOR 
+     | CONECTOR CONECTOR
      ;
 
-action: move
-      | turn
+ACTION: MOVE
+      | TURN
       ;
 
-cantidad: num 
-        | degree
+CANTIDAD: NUM 
+        | DEGREE
         ;
 
-article: ARTICLE
-       ;
-
-noun: NOUN
-    ;
-
-kindword: KINDWORD
-    ;
-
-kindcomplement: KINDCOMPLEMENT
-              ;
-
-cn: CN 
-  ;
-
-adj: ADJ
-    ;
-
-conector: CONECTOR
-        ;
-
-move: MOVE
-    ;
-
-turn: TURN
-    ;
-
-degree: DEGREE
-      ;
-
-num: NUM
-   ;
 
 %%
 
