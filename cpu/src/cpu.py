@@ -46,6 +46,7 @@ def turn270():
         dir = "RIGHT"
     else:
         dir = "DOWN" 
+
 def movement(num):
     global x,y,dir, map_field
     map_field[y][x] = 1
@@ -124,7 +125,7 @@ def main():
        print("---------------------------------------------------------------------------------")  
        i = i +1 
        
-       if i >= 7:
+       if i <= len(inst_list):
         break
 
     
