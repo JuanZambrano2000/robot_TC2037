@@ -28,10 +28,10 @@ blocks		{ return CN; }
 degrees		{ return CN; }
 
 ahead 		{ return ADJ; }
-and 		{ return ADJ; }
-then 		{ return ADJ; }
-, 		{ return ADJ; }
 
+and 		{ return CONECTOR; }
+then 		{ return CONECTOR; }
+, 		{ return CONECTOR; }
 next		{ return CONECTOR; }
 after		{ return CONECTOR; }
 
