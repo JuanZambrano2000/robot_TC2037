@@ -1,9 +1,10 @@
 %{
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "lex.yy.c"
-void yyerror(const char *s)
+//#include <stdlib.h>
+//#include <string.h>
+//#include "lex.yy.c"
+int yylex();;
+void yyerror(const char *s);
 %}
 
 %token NOUN KINDWORD KINDCOMPLEMENT CN ADJ CONECTOR MOVE TURN DEGREE NUM EOL
@@ -41,13 +42,13 @@ CANTIDAD: NUM 	{ printf("NUM\n"); }
 
 %%
 
-void yyerror(const char* s){
-        printf("Invalid\n");
-}
+//void yyerror(const char* s){
+//        printf("Invalid\n");
+//}
 
-int main(){
-	printf("MAIN\n");
-	yyparse();
-	return 0;
-	
-}
+//int main(){
+//	printf("MAIN\n");
+//	yyparse();
+//	return 0;
+//
+//}
