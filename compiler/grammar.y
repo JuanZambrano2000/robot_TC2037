@@ -11,7 +11,8 @@ void yyerror(const char *s);
 
 %%
 
-INSTRUCTIONS: INSTRUCTION 				{ printf("Instruction is valid\n"); }
+INSTRUCTIONS: INSTRUCTION EOL	            { printf("Instruction EOL is valid\n"); }
+| INSTRUCTIONS INSTRUCTION EOL		{ printf("Instruction EOL instruction is valid\n"); }
             | INSTRUCTIONS NEXOS INSTRUCTION              { printf("Instructions is valid\n"); }
             ;
 
@@ -24,7 +25,8 @@ KINDSENTENCE: KINDWORD 			{ printf("Kind Word\n"); }
             ;
 
 complements: CN 			{ printf("Complement\n"); }
-            | CN ADJ			{ printf("Complements\n"); }
+            | CN ADJ          { printf("Complement 2\n "); }
+            | ADJ ADJ		{ printf("and then\n"); }
            ;
 
 NEXOS: CONECTOR 			{ printf("Conector \n"); }
