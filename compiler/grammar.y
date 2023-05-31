@@ -11,28 +11,34 @@ void yyerror(const char *s);
 
 %%
 
-INSTRUCTIONS: INSTRUCTION EOL	            { printf("Instruction EOL is valid\n"); }
-| INSTRUCTIONS INSTRUCTION EOL		{ printf("Instruction EOL instruction is valid\n"); }
-            | INSTRUCTIONS NEXOS INSTRUCTION              { printf("Instructions is valid\n"); }
-            ;
+INSTRUCTIONS:
+INSTRUCTION  { printf("Instruction is valid\n"); }
+| INSTRUCTION EOL { printf("Instruction EOL is valid\n"); }	   
+| INSTRUCTIONS NEXOS INSTRUCTION EOL          { printf("Instructions nexos instruction EOL is valid\n"); }
+| INSTRUCTIONS NEXOS INSTRUCTION { printf("Instructions nexos instruction is valid\n"); }
+| INSTRUCTIONS INSTRUCTION EOL { printf("Instructions instruction EOL is valid\n"); }   
+;
 
-INSTRUCTION: NOUN KINDSENTENCE ACTION CANTIDAD { printf("Instruction is valid ins 1\n"); }
-            | NOUN KINDSENTENCE ACTION CANTIDAD complements 	{ printf("Instruction is valid ins 2\n"); }
-            ;
+INSTRUCTION: NOUN KINDSENTENCE MOVE NUM  { printf("Instruction MOVE NUM is valid ins 1\n"); }
+| NOUN KINDSENTENCE MOVE DEGREE  { printf("Instruction MOVE DEGREE is valid ins 1\n"); }
+| NOUN KINDSENTENCE TURN DEGREE  { printf("Instruction DEGREEis TURN DEGREEvalid ins 1\n"); }
+| NOUN KINDSENTENCE MOVE NUM  COMPLEMENTS 	{ printf("Instruction MOVE TURN is valid ins 2\n"); }
+| NOUN KINDSENTENCE MOVE DEGREE COMPLEMENTS  { printf("Instruction MOVE NUM is valid ins 1\n"); }
+| NOUN KINDSENTENCE TURN DEGREE COMPLEMENTS 	{ printf("Instruction TURN DEGREE is valid ins 2\n"); }           
+;
 
 KINDSENTENCE: KINDWORD 			{ printf("Kind Word\n"); }
-            | KINDWORD KINDCOMPLEMENT	{ printf("Kind words\n"); }
-            ;
+| KINDWORD KINDCOMPLEMENT	{ printf("Kind words\n"); }
+;
 
-complements: CN 			{ printf("Complement\n"); }
-            | CN ADJ          { printf("Complement 2\n "); }
-            | ADJ ADJ		{ printf("and then\n"); }
-           ;
+COMPLEMENTS: CN 			{ printf("Complement\n"); }
+      | CN ADJ          { printf("Complement 2\n "); }   
+      ;
 
 NEXOS: CONECTOR 			{ printf("Conector \n"); }
      | CONECTOR CONECTOR		{ printf("Conectors\n"); }
      ;
-
+/**
 ACTION: MOVE				{ printf("Move\n"); }
       | TURN				{ printf("Turn\n"); }
       ;
@@ -40,6 +46,7 @@ ACTION: MOVE				{ printf("Move\n"); }
 CANTIDAD: NUM 	{ printf("NUM\n"); }
         | DEGREE { printf("Degree\n"); }
         ;
+**/
 
 
 %%

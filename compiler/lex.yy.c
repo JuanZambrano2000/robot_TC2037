@@ -906,18 +906,18 @@ YY_RULE_SETUP
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 31 "grammar.l"
-{ return ADJ; }
+#line 32 "grammar.l"
+{ return CONECTOR; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 32 "grammar.l"
-{ return ADJ; }
+#line 33 "grammar.l"
+{ return CONECTOR; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 33 "grammar.l"
-{ return ADJ; }
+#line 34 "grammar.l"
+{ return CONECTOR; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP

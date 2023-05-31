@@ -188,10 +188,8 @@ enum yysymbol_kind_t
   YYSYMBOL_INSTRUCTIONS = 15,              /* INSTRUCTIONS  */
   YYSYMBOL_INSTRUCTION = 16,               /* INSTRUCTION  */
   YYSYMBOL_KINDSENTENCE = 17,              /* KINDSENTENCE  */
-  YYSYMBOL_complements = 18,               /* complements  */
-  YYSYMBOL_NEXOS = 19,                     /* NEXOS  */
-  YYSYMBOL_ACTION = 20,                    /* ACTION  */
-  YYSYMBOL_CANTIDAD = 21                   /* CANTIDAD  */
+  YYSYMBOL_COMPLEMENTS = 18,               /* COMPLEMENTS  */
+  YYSYMBOL_NEXOS = 19                      /* NEXOS  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -519,14 +517,14 @@ union yyalloc
 /* YYFINAL -- State number of the termination state.  */
 #define YYFINAL  6
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   19
+#define YYLAST   21
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  14
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  8
+#define YYNNTS  6
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  17
+#define YYNRULES  18
 /* YYNSTATES -- Number of states.  */
 #define YYNSTATES  26
 
@@ -578,8 +576,8 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    14,    14,    15,    16,    19,    20,    23,    24,    27,
-      28,    29,    32,    33,    36,    37,    40,    41
+       0,    15,    15,    16,    17,    18,    19,    22,    23,    24,
+      25,    26,    27,    30,    31,    34,    35,    38,    39
 };
 #endif
 
@@ -598,7 +596,7 @@ static const char *const yytname[] =
   "\"end of file\"", "error", "\"invalid token\"", "NOUN", "KINDWORD",
   "KINDCOMPLEMENT", "CN", "ADJ", "CONECTOR", "MOVE", "TURN", "DEGREE",
   "NUM", "EOL", "$accept", "INSTRUCTIONS", "INSTRUCTION", "KINDSENTENCE",
-  "complements", "NEXOS", "ACTION", "CANTIDAD", YY_NULLPTR
+  "COMPLEMENTS", "NEXOS", YY_NULLPTR
 };
 
 static const char *
@@ -608,7 +606,7 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-9)
+#define YYPACT_NINF (-10)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
@@ -622,9 +620,9 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-       4,     8,     0,     1,    10,    -8,    -9,     5,     6,     4,
-      -9,    -9,    -9,    -9,    -6,    -9,    -9,    -9,    -9,    -9,
-       3,     9,    11,    -9,    -9,    -9
+       4,     8,     0,     1,    10,    -8,   -10,     5,     3,     4,
+     -10,   -10,    -6,     6,   -10,   -10,     7,    12,    12,    12,
+     -10,    14,   -10,   -10,   -10,   -10
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -632,21 +630,21 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,     0,     0,     0,     7,     0,     1,    12,     0,     0,
-       2,     8,    14,    15,     0,    13,     3,     4,    17,    16,
-       5,     9,     0,     6,    10,    11
+       0,     0,     0,     2,    13,     0,     1,    17,     0,     0,
+       3,    14,     0,     0,    18,     6,     5,     8,     7,     9,
+       4,    15,    11,    10,    12,    16
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-      -9,    -9,     2,    -9,    -9,    -9,    -9,    -9
+     -10,   -10,     2,   -10,    -9,   -10
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,     2,     3,     5,    23,     9,    14,    20
+       0,     2,     3,     5,    22,     9
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -654,14 +652,16 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-       6,    12,    13,     1,     8,    18,    19,     1,     7,    21,
-      22,    17,     4,    15,    10,    11,    24,     0,    25,    16
+       6,    12,    13,     1,     8,    17,    18,     1,     7,    23,
+      24,    16,     4,    14,    10,    11,    15,    19,    21,     0,
+      20,    25
 };
 
 static const yytype_int8 yycheck[] =
 {
-       0,     9,    10,     3,     2,    11,    12,     3,     8,     6,
-       7,     9,     4,     8,    13,     5,     7,    -1,     7,    13
+       0,     9,    10,     3,     2,    11,    12,     3,     8,    18,
+      19,     9,     4,     8,    13,     5,    13,    11,     6,    -1,
+      13,     7
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
@@ -669,22 +669,22 @@ static const yytype_int8 yycheck[] =
 static const yytype_int8 yystos[] =
 {
        0,     3,    15,    16,     4,    17,     0,     8,    16,    19,
-      13,     5,     9,    10,    20,     8,    13,    16,    11,    12,
-      21,     6,     7,    18,     7,     7
+      13,     5,     9,    10,     8,    13,    16,    11,    12,    11,
+      13,     6,    18,    18,    18,     7
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    14,    15,    15,    15,    16,    16,    17,    17,    18,
-      18,    18,    19,    19,    20,    20,    21,    21
+       0,    14,    15,    15,    15,    15,    15,    16,    16,    16,
+      16,    16,    16,    17,    17,    18,    18,    19,    19
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     2,     3,     3,     4,     5,     1,     2,     1,
-       2,     2,     1,     2,     1,     1,     1,     1
+       0,     2,     1,     2,     4,     3,     3,     4,     4,     4,
+       5,     5,     5,     1,     2,     1,     2,     1,     2
 };
 
 
@@ -1147,104 +1147,110 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 2: /* INSTRUCTIONS: INSTRUCTION EOL  */
-#line 14 "grammar.y"
-                                            { printf("Instruction EOL is valid\n"); }
+  case 2: /* INSTRUCTIONS: INSTRUCTION  */
+#line 15 "grammar.y"
+             { printf("Instruction is valid\n"); }
 #line 1154 "y.tab.c"
     break;
 
-  case 3: /* INSTRUCTIONS: INSTRUCTIONS INSTRUCTION EOL  */
-#line 15 "grammar.y"
-                                        { printf("Instruction EOL instruction is valid\n"); }
+  case 3: /* INSTRUCTIONS: INSTRUCTION EOL  */
+#line 16 "grammar.y"
+                  { printf("Instruction EOL is valid\n"); }
 #line 1160 "y.tab.c"
     break;
 
-  case 4: /* INSTRUCTIONS: INSTRUCTIONS NEXOS INSTRUCTION  */
-#line 16 "grammar.y"
-                                                          { printf("Instructions is valid\n"); }
+  case 4: /* INSTRUCTIONS: INSTRUCTIONS NEXOS INSTRUCTION EOL  */
+#line 17 "grammar.y"
+                                              { printf("Instructions nexos instruction EOL is valid\n"); }
 #line 1166 "y.tab.c"
     break;
 
-  case 5: /* INSTRUCTION: NOUN KINDSENTENCE ACTION CANTIDAD  */
-#line 19 "grammar.y"
-                                               { printf("Instruction is valid ins 1\n"); }
+  case 5: /* INSTRUCTIONS: INSTRUCTIONS NEXOS INSTRUCTION  */
+#line 18 "grammar.y"
+                                 { printf("Instructions nexos instruction is valid\n"); }
 #line 1172 "y.tab.c"
     break;
 
-  case 6: /* INSTRUCTION: NOUN KINDSENTENCE ACTION CANTIDAD complements  */
-#line 20 "grammar.y"
-                                                                { printf("Instruction is valid ins 2\n"); }
+  case 6: /* INSTRUCTIONS: INSTRUCTIONS INSTRUCTION EOL  */
+#line 19 "grammar.y"
+                               { printf("Instructions instruction EOL is valid\n"); }
 #line 1178 "y.tab.c"
     break;
 
-  case 7: /* KINDSENTENCE: KINDWORD  */
-#line 23 "grammar.y"
-                                        { printf("Kind Word\n"); }
+  case 7: /* INSTRUCTION: NOUN KINDSENTENCE MOVE NUM  */
+#line 22 "grammar.y"
+                                         { printf("Instruction MOVE NUM is valid ins 1\n"); }
 #line 1184 "y.tab.c"
     break;
 
-  case 8: /* KINDSENTENCE: KINDWORD KINDCOMPLEMENT  */
-#line 24 "grammar.y"
-                                        { printf("Kind words\n"); }
+  case 8: /* INSTRUCTION: NOUN KINDSENTENCE MOVE DEGREE  */
+#line 23 "grammar.y"
+                                 { printf("Instruction MOVE DEGREE is valid ins 1\n"); }
 #line 1190 "y.tab.c"
     break;
 
-  case 9: /* complements: CN  */
-#line 27 "grammar.y"
-                                        { printf("Complement\n"); }
+  case 9: /* INSTRUCTION: NOUN KINDSENTENCE TURN DEGREE  */
+#line 24 "grammar.y"
+                                 { printf("Instruction DEGREEis TURN DEGREEvalid ins 1\n"); }
 #line 1196 "y.tab.c"
     break;
 
-  case 10: /* complements: CN ADJ  */
-#line 28 "grammar.y"
-                              { printf("Complement 2\n "); }
+  case 10: /* INSTRUCTION: NOUN KINDSENTENCE MOVE NUM COMPLEMENTS  */
+#line 25 "grammar.y"
+                                                { printf("Instruction MOVE TURN is valid ins 2\n"); }
 #line 1202 "y.tab.c"
     break;
 
-  case 11: /* complements: ADJ ADJ  */
-#line 29 "grammar.y"
-                                { printf("and then\n"); }
+  case 11: /* INSTRUCTION: NOUN KINDSENTENCE MOVE DEGREE COMPLEMENTS  */
+#line 26 "grammar.y"
+                                             { printf("Instruction MOVE NUM is valid ins 1\n"); }
 #line 1208 "y.tab.c"
     break;
 
-  case 12: /* NEXOS: CONECTOR  */
-#line 32 "grammar.y"
-                                        { printf("Conector \n"); }
+  case 12: /* INSTRUCTION: NOUN KINDSENTENCE TURN DEGREE COMPLEMENTS  */
+#line 27 "grammar.y"
+                                                { printf("Instruction TURN DEGREE is valid ins 2\n"); }
 #line 1214 "y.tab.c"
     break;
 
-  case 13: /* NEXOS: CONECTOR CONECTOR  */
-#line 33 "grammar.y"
-                                        { printf("Conectors\n"); }
+  case 13: /* KINDSENTENCE: KINDWORD  */
+#line 30 "grammar.y"
+                                        { printf("Kind Word\n"); }
 #line 1220 "y.tab.c"
     break;
 
-  case 14: /* ACTION: MOVE  */
-#line 36 "grammar.y"
-                                        { printf("Move\n"); }
+  case 14: /* KINDSENTENCE: KINDWORD KINDCOMPLEMENT  */
+#line 31 "grammar.y"
+                                { printf("Kind words\n"); }
 #line 1226 "y.tab.c"
     break;
 
-  case 15: /* ACTION: TURN  */
-#line 37 "grammar.y"
-                                        { printf("Turn\n"); }
+  case 15: /* COMPLEMENTS: CN  */
+#line 34 "grammar.y"
+                                        { printf("Complement\n"); }
 #line 1232 "y.tab.c"
     break;
 
-  case 16: /* CANTIDAD: NUM  */
-#line 40 "grammar.y"
-                { printf("NUM\n"); }
+  case 16: /* COMPLEMENTS: CN ADJ  */
+#line 35 "grammar.y"
+                        { printf("Complement 2\n "); }
 #line 1238 "y.tab.c"
     break;
 
-  case 17: /* CANTIDAD: DEGREE  */
-#line 41 "grammar.y"
-                 { printf("Degree\n"); }
+  case 17: /* NEXOS: CONECTOR  */
+#line 38 "grammar.y"
+                                        { printf("Conector \n"); }
 #line 1244 "y.tab.c"
     break;
 
+  case 18: /* NEXOS: CONECTOR CONECTOR  */
+#line 39 "grammar.y"
+                                        { printf("Conectors\n"); }
+#line 1250 "y.tab.c"
+    break;
 
-#line 1248 "y.tab.c"
+
+#line 1254 "y.tab.c"
 
       default: break;
     }
@@ -1437,7 +1443,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 45 "grammar.y"
+#line 52 "grammar.y"
 
 
 //void yyerror(const char* s){
