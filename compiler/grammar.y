@@ -11,14 +11,17 @@ void yyerror(const char *s);
 
 %%
 
-INSTRUCTIONS:
-INSTRUCTION  { printf("Instruction is valid\n"); }
-| INSTRUCTION EOL { printf("Instruction EOL is valid\n"); }	   
-| INSTRUCTIONS NEXOS INSTRUCTION EOL          { printf("Instructions nexos instruction EOL is valid\n"); }
-| INSTRUCTIONS NEXOS INSTRUCTION { printf("Instructions nexos instruction is valid\n"); }
-| INSTRUCTIONS INSTRUCTION EOL { printf("Instructions instruction EOL is valid\n"); }   
+INSTRUCTIONS: INSTRUCTION  	{ printf("Instructions is valid\n"); }
+| INSTRUCTIONS NEXOS 			{ printf("insS nexo VALID\n"); }
+| INSTRUCTIONS INSTRUCTION  		{ printf("Instructions instruction is valid\n"); }
+//| INSTRUCTION  			{ printf("Instruction is valid\n"); }
+| INSTRUCTIONS EOL 			{ printf("INS VALID\n"); }
 ;
 
+NEXOS: CONECTOR 			{ printf("Conector \n"); }
+    | CONECTOR CONECTOR		{ printf("Conectors\n"); }
+     ;
+     
 INSTRUCTION: NOUN KINDSENTENCE MOVE NUM  { printf("Instruction MOVE NUM is valid ins 1\n"); }
 | NOUN KINDSENTENCE MOVE DEGREE  { printf("Instruction MOVE DEGREE is valid ins 1\n"); }
 | NOUN KINDSENTENCE TURN DEGREE  { printf("Instruction DEGREEis TURN DEGREEvalid ins 1\n"); }
@@ -35,9 +38,7 @@ COMPLEMENTS: CN 			{ printf("Complement\n"); }
       | CN ADJ          { printf("Complement 2\n "); }   
       ;
 
-NEXOS: CONECTOR 			{ printf("Conector \n"); }
-     | CONECTOR CONECTOR		{ printf("Conectors\n"); }
-     ;
+
 /**
 ACTION: MOVE				{ printf("Move\n"); }
       | TURN				{ printf("Turn\n"); }
