@@ -31,7 +31,7 @@ ahead 		{ return ADJ; }
 
 and 		{ return CONECTOR; }
 then 		{ return CONECTOR; }
-, 		{ return CONECTOR; }
+"," 		{ return CONECTOR; }
 next		{ return CONECTOR; }
 after		{ return CONECTOR; }
 
@@ -45,12 +45,12 @@ turn		{ return TURN; }
 rotate 		{ return TURN; }
 spin            { return TURN; }
 
-90 		{ return DEGREE; }
-180 		{ return DEGREE; }
-270		{ return DEGREE; }
-360             { return DEGREE; }
+90 		{ yylval.dval = atof(yytext); return DEGREE; }
+180 		{ yylval.dval = atof(yytext); return DEGREE; }
+270		{ yylval.dval = atof(yytext); return DEGREE; }
+360             { yylval.dval = atof(yytext); return DEGREE; }
 
-[0-9]+          { return NUM; }
+[0-9]+          { yylval.dval = atof(yytext); return NUM; }
 [\t]+ 		;
 [\n]            { return EOL; }
 .		{}
