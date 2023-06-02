@@ -56,3 +56,16 @@ Deliver a PDF document generated based on the README.md file of this directory w
 * Definition of CFG and Lexemas
 * List of sample inputs to be detected or rejected
 * Link to video recording that shows the execution and testing
+
+## How to compile and run
+* Install bison and lex
+` sudo apt install flex bison`
+* Install Make
+` sudo apt-get install -y bison flex vim git libbison-dev make `
+* Go to ./compiler in terminal
+* Run `make`
+* Run `./robot > instructions.asm`
+* Create instructions
+* Go to ./cpu/src and move the instructions.asm into the folder
+* Run cpu.py
+
