@@ -39,23 +39,17 @@ Compiler constraints:
 	MOV,4
 ```
 
-Deliverables: 
+## Deliverables: 
 
 * Deliverable 1: Machine state and CPU simulator
 * Deliverable 2: Lex analyzer
 * Deliverable 3: YACC grammar
 * Deliverable 4: Report in PDF generate from the README of your project
 
-## Deliverable 4
-
-Deliver a PDF document generated based on the README.md file of this directory with the next parts: 
-
-* Description of the problem
-* Link to the Github project
-* Definition of automata that specifies the logic of CPU
-* Definition of CFG and Lexemas
-* List of sample inputs to be detected or rejected
-* Link to video recording that shows the execution and testing
+## Link to video:
+* https://youtu.be/G1o2oDO8Nig
+## Link to poster:
+* https://www.canva.com/design/DAFlKSCJQwY/GKkxX3JGJB5mesddLoAtSg/edit?utm_content=DAFlKSCJQwY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
 ## How to compile and run
 * Install bison and lex
@@ -66,6 +60,6 @@ Deliver a PDF document generated based on the README.md file of this directory w
 * Run `make`
 * Run `./robot > instructions.asm`
 * Create instructions
-* Go to ./cpu/src and move the instructions.asm into the folder
+* Install python library numpy
 * Run cpu.py
 
