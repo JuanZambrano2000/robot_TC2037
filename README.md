@@ -38,7 +38,7 @@ Compiler constraints:
 	TURN,90
 	MOV,4
 ```
-
+	
 ## Deliverables: 
 
 * Deliverable 1: Machine state and CPU simulator
@@ -50,6 +50,12 @@ Compiler constraints:
 * https://youtu.be/G1o2oDO8Nig
 ## Link to poster:
 * https://www.canva.com/design/DAFlKSCJQwY/GKkxX3JGJB5mesddLoAtSg/edit?utm_content=DAFlKSCJQwY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+	
+## Team members
+* Stefano Herrejon Antuñano A00571720
+* Diego Sebastian García Cabrera A01634071
+* Juan Pablo Zambrano Barajas A01636420
+* Javier Perez Santiago A01662438
 
 ## How to compile and run
 * Install bison and lex
