@@ -1,5 +1,6 @@
 import csv
 import numpy
+import os
 
 map_field = numpy.zeros(shape=(10,10))
 
@@ -74,7 +75,9 @@ def movement(num):
 def read_file():
     inst_list = []
     global line_count
-    with open('compiler\instructions.asm') as csv_file:
+    current_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'compiler'))
+    file_path = os.path.join(current_dir, 'instructions.asm')
+    with open(file_path) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
         for row in csv_reader:
@@ -85,6 +88,7 @@ def read_file():
 def main():
     inst_list = read_file()
     global x, y, dir, map_field, line_count
+    map_field[0][0] = 2
     i = 0
     print(map_field)
     print("----------------------------------------------------------------------------------")
