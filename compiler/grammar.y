@@ -29,7 +29,7 @@ INSTRUCTION: NOUN KINDSENTENCE MOVE NUM  	{ printf("mov,%d\n",$4); }
 | NOUN KINDSENTENCE TURN DEGREE  		{ printf("turn,%d\n",$4); }
 | NOUN KINDSENTENCE MOVE NUM  COMPLEMENTS 	{ printf("mov,%d\n",$4); }
 | NOUN KINDSENTENCE MOVE DEGREE COMPLEMENTS  	{ printf("mov,%d\n",$4); }
-| NOUN KINDSENTENCE TURN DEGREE COMPLEMENTS 	{ printf("turn%d\n",$4);}           
+| NOUN KINDSENTENCE TURN DEGREE COMPLEMENTS 	{ printf("turn,%d\n",$4);}           
 ;
 
 KINDSENTENCE: KINDWORD 			//{ printf("Kind Word\n"); }
