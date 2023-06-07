@@ -4,7 +4,7 @@ import numpy
 map_field = numpy.zeros(shape=(10,10))
 
 dir = "RIGHT"
-
+line_count = 0
 x = 0
 y = 0
 def turn90():
@@ -73,7 +73,8 @@ def movement(num):
 
 def read_file():
     inst_list = []
-    with open('cpu\src\instructions.asm') as csv_file:
+    global line_count
+    with open('compiler\instructions.asm') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         line_count = 0
         for row in csv_reader:
@@ -83,7 +84,7 @@ def read_file():
 
 def main():
     inst_list = read_file()
-    global x, y, dir, map_field
+    global x, y, dir, map_field, line_count
     i = 0
     print(map_field)
     print("----------------------------------------------------------------------------------")
@@ -105,7 +106,7 @@ def main():
        print("---------------------------------------------------------------------------------")  
        i = i +1 
        
-       if i >= 7:
+       if i >= line_count:
         break
     
 if __name__ == "__main__":
