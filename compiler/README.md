@@ -16,12 +16,6 @@
 		* Robot  2 blocks moves
 		* Moves Robot 2 blocks and turns 89 degrees
 
-This part is free to your imagination, you can use ChatGPT to generate more examples of possible sentences to be analyzed by the compiler.
-
-## Deliverable: 
-
-Deliver a PDF document generated based on the README.md file of this directory with the next parts: 
-
 * Description of the problem
 * Definition of CFG
 * List of sample inputs to be detected or rejected
