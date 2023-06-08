@@ -1,44 +1,50 @@
 # Deliverable 2: Lex analyzer
 
-Create a lex that detects thnks like 
+* NOUN - Robot's name, used to start any sentence
+	robot
+	machine
+	automaton
+	android
+	automaton
 
-* NOUN
-* VERBS
-* KIND WORDS
-* NUMBER OF BLOCKS
-* DEGREES 
-* ... 
+* KINDWORD - Word used to address the robot in a friendly manner
+	please
+	pls
+	could
+	kindly
+	pardon
+	may
+	would
 
-This part is free to your imagination 
+* KINDCOMPLEMENT - Word that can complement a KINDWORD
+	proceed
+	you
+	me
 
-## Deliverable: 
+* CN - Word used to complement the sentence and specify if it's referring to blocks or degrees
+	blocks
+	degrees
 
-Deliver a PDF document generated based on the README.md file of this directory with the next parts: 
+* MOVE - Word that describes an instruction for the robot to move
+	forward
+	move
+	navigate
+	go
+	transfer
 
-* Description of the problem
-* Definition of TOKENs
-* List of sample inputs to be detected or rejected
+* TURN - Word that describes an instruction for the robot to turn in the direction it's facing
+	turn
+	rotate
+	spin
 
+* DEGREE - Numbers used to indicate how much the robot will rotate
+	90
+	180
+	270
+	360
 
-# Deliverable 3: YACC grammar
+* NUM - Range of numbers for the robot to move
+	[0-9]+
 
-Create a grammar that detects sentences  like 
-	* Examples of valid sentences: 
-		* Robot please move 2 blocks ahead
-		* Robot please move 3 blocks ahead and then turn 90 degrees, then move 2 blocks
-	* Examples of invalid sentences:
-		* Robot moves 2 blocks
-		* Robot moves 2 blocks quickly
-		* Move 2 blocks right now
-		* Robot  2 blocks moves
-		* Moves Robot 2 blocks and turns 89 degrees
-
-This part is free to your imagination, you can use ChatGPT to generate more examples of possible sentences to be analyzed by the compiler.
-
-## Deliverable: 
-
-Deliver a PDF document generated based on the README.md file of this directory with the next parts: 
-
-* Description of the problem
-* Definition of CFG
-* List of sample inputs to be detected or rejected
+## Explanation:
+This was the grammar we used to carry out our project. Additionally, we organized it in such a way that each word in the grammar does not interfere with the other. For example, the DEGREE words are placed before the NUM words because if we put them after, when entering the DEGREE values, they were recognized as NUM.
