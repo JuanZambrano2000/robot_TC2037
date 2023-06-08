@@ -1,31 +1,14 @@
-# Deliverable 2: Lex analyzer
-
-Create a lex that detects thnks like 
-
-* NOUN
-* VERBS
-* KIND WORDS
-* NUMBER OF BLOCKS
-* DEGREES 
-* ... 
-
-This part is free to your imagination 
-
-## Deliverable: 
-
-Deliver a PDF document generated based on the README.md file of this directory with the next parts: 
-
-* Description of the problem
-* Definition of TOKENs
-* List of sample inputs to be detected or rejected
-
-
 # Deliverable 3: YACC grammar
 
-Create a grammar that detects sentences  like 
+
+	
 	* Examples of valid sentences: 
-		* Robot please move 2 blocks ahead
-		* Robot please move 3 blocks ahead and then turn 90 degrees, then move 2 blocks
+		* robot please move 2 blocks ahead
+		* robot please move 3 blocks ahead and then robot could you turn 90 degrees , then robot pls move 2 blocks
+		* automaton pls forward 10 blocks 
+		* android spin 180 
+		* machine rotate please 270 degrees after robot pls forward 2 blocks ahead
+		* 
 	* Examples of invalid sentences:
 		* Robot moves 2 blocks
 		* Robot moves 2 blocks quickly
