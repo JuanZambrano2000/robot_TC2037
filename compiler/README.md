@@ -1,7 +1,7 @@
 # Deliverable 3: YACC grammar
 
 Problem :
-	*We need a grammar that can detect sentences that can be translated into instruction that our cpu.py can detect and ejectute. The grammar is robot name, gratitude, action, cuantity, and could have a complement. In case that further instructions are needed, there need to be a nexo in between instructions. 
+	*We need a grammar that can detect sentences that can be translated into instruction that our cpu.py ejectute. The grammar is robot name, gratitude, action, quantity, and the option of a complement. In case that further instructions are needed, there need to be a nexo in between instructions. 
 	
 CFG : 
 
