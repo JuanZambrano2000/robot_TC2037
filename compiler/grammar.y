@@ -14,7 +14,6 @@ void yyerror(const char *s);
 %%
 
 INSTRUCTIONS: INSTRUCTION  	//{ printf("Instructions is valid\n"); }
-| INSTRUCTIONS  			//{ printf("insS nexo VALID\n"); }
 | INSTRUCTIONS NEXOS INSTRUCTION  		//{ printf("Instructions instruction is valid\n"); }
 | INSTRUCTIONS EOL 			//{ printf("INS VALID\n"); }
 ;
